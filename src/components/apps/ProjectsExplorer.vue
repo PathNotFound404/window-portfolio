@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { projects } from '@/content'
+import { publicUrl } from '@/lib/publicUrl'
 import IconTile from '../IconTile.vue'
 
 // An Explorer-style folder of projects. Opening one shows its detail page; Back returns.
@@ -43,7 +44,7 @@ const status = computed(() =>
         <img
           v-if="current.screenshot"
           class="shot"
-          :src="current.screenshot"
+          :src="publicUrl(current.screenshot)"
           :alt="`${current.name} screenshot`"
         />
         <p>{{ current.description ?? current.summary }}</p>

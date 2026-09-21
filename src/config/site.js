@@ -17,17 +17,11 @@ export const site = {
     resume: '/resume.pdf',
   },
 
-  // Desktop background. Use a solid color, an image, or both (image wins).
-  // Images live in public/wallpapers/ and are referenced as '/wallpapers/<file>'.
-  // mode: 'cover' | 'tile' | 'center'
-  wallpaper: {
-    color: '#008080',
-    image: null,
-    mode: 'cover',
-  },
-
+  // Desktop backgrounds are listed in src/config/backgrounds.js; color schemes in appearance.js.
+  // Visitors can change both (and the clock format) in the Settings app.
   taskbar: {
     startLabel: 'Start',
+    // Default clock format; visitors can switch it in Settings.
     clock12h: true,
   },
 }

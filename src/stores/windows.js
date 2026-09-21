@@ -1,6 +1,7 @@
 import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 import { fallbackWindow, minWindowSize, windowDefaults } from '@/config/windows'
+import { publicUrl } from '@/lib/publicUrl'
 
 const CASCADE_STEP = 24
 
@@ -48,7 +49,7 @@ export const useWindowsStore = defineStore('windows', () => {
   // Runs a desktop/Start-menu entry: opens a new tab for `url`, or a window for `app`.
   function launch(item) {
     if (item.url) {
-      window.open(item.url, '_blank', 'noopener,noreferrer')
+      window.open(publicUrl(item.url), '_blank', 'noopener,noreferrer')
       return
     }
     open(item.app)

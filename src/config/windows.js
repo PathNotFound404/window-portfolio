@@ -4,6 +4,7 @@ export const windowDefaults = {
   projects: { title: 'My Projects', w: 560, h: 400, x: 90, y: 40 },
   about: { title: 'About Me - Notepad', w: 440, h: 320, x: 160, y: 70 },
   contact: { title: 'Contact', w: 340, h: 260, x: 220, y: 100 },
+  settings: { title: 'Settings', w: 380, h: 420, x: 260, y: 50 },
 }
 
 // Used for any app that has no entry above.

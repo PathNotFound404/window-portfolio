@@ -3,10 +3,12 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { desktopIcons } from '@/config/desktop'
 import { site } from '@/config/site'
 import { iconUrl } from '@/lib/icons'
+import { useSettingsStore } from '@/stores/settings'
 import { useWindowsStore } from '@/stores/windows'
 import StartMenu from './StartMenu.vue'
 
 const store = useWindowsStore()
+const settings = useSettingsStore()
 const menuOpen = ref(false)
 const startArea = ref(null)
 
@@ -17,7 +19,7 @@ const time = () =>
   now.value.toLocaleTimeString([], {
     hour: 'numeric',
     minute: '2-digit',
-    hour12: site.taskbar.clock12h,
+    hour12: settings.clock12h,
   })
 
 let timer

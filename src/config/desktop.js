@@ -15,4 +15,5 @@ export const desktopIcons = [
   { label: 'Resume', icon: 'document', url: site.links.resume },
   { label: 'GitHub', icon: 'github', url: site.links.github },
   { label: 'LinkedIn', icon: 'linkedin', url: site.links.linkedin },
+  { label: 'Settings', icon: 'settings', app: 'settings' },
 ]

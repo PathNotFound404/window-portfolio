@@ -1,6 +1,9 @@
 <script setup>
 import AppTaskbar from '@/components/AppTaskbar.vue'
 import DesktopView from '@/components/DesktopView.vue'
+import { useAppearance } from '@/composables/useAppearance'
+
+useAppearance()
 </script>
 
 <template>

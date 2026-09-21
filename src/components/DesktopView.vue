@@ -1,29 +1,21 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { desktopIcons } from '@/config/desktop'
-import { site } from '@/config/site'
+import { wallpaperStyle } from '@/lib/wallpaper'
+import { useSettingsStore } from '@/stores/settings'
 import { useWindowsStore } from '@/stores/windows'
 import AppWindow from './AppWindow.vue'
 import IconTile from './IconTile.vue'
 
 const store = useWindowsStore()
+const settings = useSettingsStore()
 const selected = ref(null)
 
-const wallpaperStyle = computed(() => {
-  const { color, image, mode } = site.wallpaper
-  const style = { backgroundColor: color }
-  if (image) {
-    style.backgroundImage = `url("${image}")`
-    style.backgroundPosition = 'center'
-    style.backgroundRepeat = mode === 'tile' ? 'repeat' : 'no-repeat'
-    style.backgroundSize = mode === 'cover' ? 'cover' : 'auto'
-  }
-  return style
-})
+const style = computed(() => wallpaperStyle(settings.currentBackground))
 </script>
 
 <template>
-  <main class="desktop" :style="wallpaperStyle" @pointerdown.self="selected = null">
+  <main class="desktop" :style="style" @pointerdown.self="selected = null">
     <ul class="icon-grid">
       <li v-for="item in desktopIcons" :key="item.label">
         <IconTile

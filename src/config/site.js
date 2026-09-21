@@ -1,0 +1,33 @@
+// Site-wide identity, links, and desktop look. Edit this file for most day-to-day changes.
+export const site = {
+  // Browser tab title.
+  title: 'My Portfolio',
+
+  // TODO: replace the placeholders below with your real details.
+  owner: {
+    name: 'Your Name',
+    tagline: 'Software Engineer',
+    email: 'you@example.com',
+  },
+
+  links: {
+    github: 'https://github.com/PathNotFound404',
+    linkedin: 'https://www.linkedin.com/in/your-handle',
+    // Put your PDF at public/resume.pdf (or change this path).
+    resume: '/resume.pdf',
+  },
+
+  // Desktop background. Use a solid color, an image, or both (image wins).
+  // Images live in public/wallpapers/ and are referenced as '/wallpapers/<file>'.
+  // mode: 'cover' | 'tile' | 'center'
+  wallpaper: {
+    color: '#008080',
+    image: null,
+    mode: 'cover',
+  },
+
+  taskbar: {
+    startLabel: 'Start',
+    clock12h: true,
+  },
+}

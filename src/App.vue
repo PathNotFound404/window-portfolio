@@ -1,11 +1,20 @@
-<script setup></script>
+<script setup>
+import AppTaskbar from '@/components/AppTaskbar.vue'
+import DesktopView from '@/components/DesktopView.vue'
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="screen">
+    <DesktopView />
+    <AppTaskbar />
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.screen {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) var(--taskbar-height);
+  height: 100%;
+}
+</style>

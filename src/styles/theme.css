@@ -1,0 +1,69 @@
+/*
+  Look-and-feel knobs. Change a value here and it applies everywhere.
+  (98.css hardcodes its colors, so the rules below re-apply these variables on top of it.
+  main.js imports this file after 98.css.)
+*/
+:root {
+  --surface: #c0c0c0;
+  --text: #000;
+
+  --titlebar-active-start: #000080;
+  --titlebar-active-end: #1084d0;
+  --titlebar-inactive-start: #808080;
+  --titlebar-inactive-end: #b5b5b5;
+  --titlebar-text: #fff;
+
+  --selection-bg: #000080;
+  --selection-text: #fff;
+
+  --icon-label-color: #fff;
+  --taskbar-height: 30px;
+
+  --font-ui: 'Pixelated MS Sans Serif', Arial, sans-serif;
+  --font-doc: 'Courier New', Courier, monospace;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: #000;
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  -webkit-font-smoothing: none;
+}
+
+.window {
+  background: var(--surface);
+}
+
+.title-bar {
+  background: linear-gradient(90deg, var(--titlebar-active-start), var(--titlebar-active-end));
+}
+
+.title-bar.inactive {
+  background: linear-gradient(90deg, var(--titlebar-inactive-start), var(--titlebar-inactive-end));
+}
+
+.title-bar-text {
+  color: var(--titlebar-text);
+}
+
+/* A <button> stripped of 98.css's bevel, for icons and menu rows. */
+.plain-button,
+.plain-button:not(:disabled):active {
+  background: none;
+  box-shadow: none;
+  color: inherit;
+  font: inherit;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  text-shadow: none;
+}

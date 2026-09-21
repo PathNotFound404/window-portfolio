@@ -15,4 +15,9 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  build: {
+    // 98.css ships `@media (not(hover))`, which lightningcss (Vite's default minifier) rejects.
+    // 98.css is already minified and our own CSS is tiny, so skip CSS minification.
+    cssMinify: false,
+  },
 })
